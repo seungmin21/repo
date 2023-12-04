@@ -2,12 +2,9 @@ const express = require('express')
 const app = express();
 const path = require('path');
 const port = 3030;
+const routing = require('route');
 
-app.get('/', (req, res) => {
-  const indexPath = path.join(__dirname, 'index.html');
-  res.sendFile(indexPath);
-})
-
+app.use('/', routing)
 app.use(express.static(path.join(__dirname, 'public')));
 
 // 서버 열기가 안되는 사례
