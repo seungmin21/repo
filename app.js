@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const path = require('path');
 const port = 3030;
-const routing = require('route');
+const routing = require('./route');
 
 app.use('/', routing)
 app.use(express.static(path.join(__dirname, 'public')));
